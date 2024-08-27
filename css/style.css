@@ -1,0 +1,358 @@
+:root{
+    --fuenteTitulos: "Bebas Neue", sans-serif;
+    --fuenteTexto: "Quicksand", sans-serif;
+    --fuenteBotones: "Baskervville SC", serif;
+}
+
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-size: 16px; /*1 rem = 10p*/
+    background-image: linear-gradient(to top, #bf360c 0%, #424242  65%);
+}
+
+h1 {
+    font-family: var(--fuenteTitulos);
+    font-size: 7rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+}
+/* Utilidades*/
+
+.sombra {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.borde-titulo{
+    -webkit-text-stroke: .001rem black;
+}
+
+.contenedor-formato {
+    padding: 5rem;
+    border-radius: 2rem;
+    max-width: 120rem;
+    margin: 4rem auto;
+}
+
+@media (max-width: 480px) {
+    .contenedor-formato {
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    .contenedor-formato {
+        width: 90%;
+    }
+}
+
+
+
+/*TODO: PaginaPrincipal*/
+
+.Titulo-principal {
+    color: white;
+}
+
+/*contenido completo*/
+
+.contenido-completo {
+    position: absolute;
+    padding: 5rem;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 3rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+/*Cabezera*/
+
+.head {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.head p {
+    font-family: var(--fuenteTexto);
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    margin: 0 auto 6rem;
+}
+@media (max-width: 480px) {
+    .head p {
+        font-size: 1.5rem;
+    }
+}
+
+/*body*/
+
+.contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contenido {
+        flex-direction: column;
+    }
+}
+
+.links-content {
+    position: relative;
+}
+.Links-title{
+    text-align: center;
+    position: absolute;
+    font-size: 5rem;
+    font-family: var(--fuenteTitulos);
+    color: white;
+    -webkit-text-stroke: .01rem black;
+    margin:  0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); /*las anteriores lineas me alinean al centro con position*/
+}
+
+.links {
+    text-decoration: none;
+}
+.Imagenesinicio {
+    width:  40rem;
+    height: 20rem;
+    filter: brightness(60%); /*Oscurece la img*/
+    object-fit: cover;
+    transition: 1s;
+}
+
+@media (max-width: 480px) {
+    .Imagenesinicio{
+        width: 25rem;
+        height: 15rem;
+    }
+}
+
+.links-content:hover .Imagenesinicio {  
+    transform: scale(1.04); /*efecto zoom*/
+    filter: brightness(40%); /*Oscurece la img*/
+}
+
+/*TODO: Apartamentos*/
+
+.navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 1rem auto 3rem;
+}
+
+@media (max-width: 480px) {
+    .navegacion {
+        flex-direction: column;
+    }
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    font-family: var(--fuenteTexto);
+    
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+@media (max-width: 480px) {
+    .navegacion a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.navegacion a:hover {
+    background-color: #bf360c;
+    transition: 1s;
+    border-radius: 1.1rem;
+    color: black;
+}
+.contenido-Apartamentos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 3rem auto;
+    gap: 10rem;
+}
+
+@media (max-width: 480px) {
+    .contenido-Apartamentos {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .contenedor-imagenes {
+        margin: 0 auto; 
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, 0%);
+
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido-Apartamentos {
+        display: flex;
+        flex-direction: column;
+    }
+    .contenedor-imagenes{
+        margin: 0 auto;
+        
+    }
+}
+
+.contenedor-imagenes .Scroll-images{
+    display: flex;
+    height: 30rem;
+    width: 50rem;
+    overflow: hidden; /* evita el desbordamiento */
+    padding: .2rem;
+    scroll-behavior: smooth;
+}
+.Scroll-images img {
+    width: 50rem;
+    height: 101%;
+    object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    .contenedor-imagenes .Scroll-images {
+        width: 30rem;
+        height: 20rem;
+    }
+
+    .Scroll-images img {
+        width: 30rem;
+        height: 20rem;
+    }
+}
+
+.contenedor-imagenes { 
+    position: relative;
+}
+.contenedor-imagenes .control{
+    position: absolute ;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 80%;
+    border:.2rem solid black;
+    background-color: white;
+    padding: 1rem;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.contenedor-imagenes .control:hover {
+    background-color: rgba(192, 192, 192, 0.584);
+    border: .2rem solid white;
+    transition: 1s;
+}
+
+.contenedor-imagenes .siguiente {
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.contenedor-imagenes .reversa {
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -100%);
+}
+
+.Contenedor-boton {
+    display: flex;
+    justify-content: center;
+}
+
+/* Activar boton */
+
+.contenedor-imagenes .BotonActivo {
+    margin-top: 2rem;
+    width: 15rem;   
+    height: 3rem;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 1.1rem;
+    font-family: var(--fuenteBotones);
+    font-weight: bold;
+}
+.contenedor-imagenes button:hover {
+    background-color: black;
+    color: white;
+    transition: .4s;
+}
+
+/* Desactivar boton */
+
+/* .contenedor-imagenes .BotonDesactivado {
+    margin-top: 2rem;
+    width: 15rem;   
+    height: 3rem;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 1.1rem;
+    font-family: var(--fuenteBotones);
+    font-weight: bold;
+    cursor: none;
+    text-decoration: line-through;
+}
+
+.contenedor-imagenes button:hover {
+    background-color: red;
+    color: white;
+    transition: .4s;
+} */
+
+
+.Descripcion {
+    color: white;
+    font-family: var(--fuenteTexto);
+    padding: 3rem;
+    border-radius: 1.5rem;
+}
+
+.Descripcion UL {
+    list-style: none;
+}
+
+.Descripcion  h3{
+    font-size: 3rem;
+    text-align: center;
+}
+
+/*TODO:  RadioTecnico */
+
+.Encabezado p {
+    margin: .5rem auto 3.3rem;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    font-family: var(--fuenteTexto);
+}
